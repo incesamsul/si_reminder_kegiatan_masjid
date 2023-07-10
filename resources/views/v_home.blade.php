@@ -12,7 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Mico</title>
+    <title>Masjid nurul imam pangkep</title>
 
 
     <!-- bootstrap core css -->
