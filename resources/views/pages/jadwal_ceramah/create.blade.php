@@ -45,7 +45,7 @@
                                     value="{{ $edit ? $edit->tema : ' ' }}">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger">Simpan</button>
+                                <button type="submit" class="btn bg-main text-white">Simpan</button>
                             </div>
                         </form>
                     </div>
