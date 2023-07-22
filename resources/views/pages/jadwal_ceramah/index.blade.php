@@ -38,14 +38,33 @@
                                         <td>{{ $row->tema }}</td>
                                         <td>
                                             <a href="{{ URL::to('/admin/jadwal_ceramah/edit/' . $row->id) }}"
-                                                class="btn btn-primary">Edit</a>
+                                                class="btn btn-primary">
+                                                <i class="fas fa-pen"></i>
+                                                Edit</a>
                                             <form action="{{ URL::to('/admin/jadwal_ceramah/delete/' . $row->id) }}"
                                                 method="POST" style="display: inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" onclick="return confirm('Yakin?')"
-                                                    class="ml-2 btn btn-danger">Hapus</button>
+                                                    class="ml-2 btn btn-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                    Hapus</button>
                                             </form>
+
+                                            <?php
+                                            
+                                            $pesan = "Halo $row->nama \n\n";
+                                            $pesan .= 'Ini adalah pengingat untuk ceramah yang akan datang:\n';
+                                            $pesan .= "Tanggal: $row->tanggal  \n";
+                                            $pesan .= 'Jangan lupa untuk hadir dan mempersiapkan diri untuk acara ini. Semoga acara ceramah berjalan dengan lancar dan bermanfaat.\n\n';
+                                            $pesan .= 'Terima kasih!';
+                                            ?>
+
+                                            <a href="https://wa.me/{{ $row->no_hp }}/?text=<?php echo urlencode($pesan); ?>"
+                                                class="btn btn-success ml-2">
+                                                <i class="fab fa-whatsapp"></i>
+                                                Kirim
+                                            </a>
 
                                         </td>
                                     </tr>

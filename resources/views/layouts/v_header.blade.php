@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('/css/main.css')}}">
-    <link rel="stylesheet" href="{{asset('stisla')}}/assets/css/style.css">
-    <link rel="stylesheet" href="{{asset('stisla')}}/assets/css/components.css">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('stisla') }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('stisla') }}/assets/css/components.css">
 
     {{-- dropzone cdn --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css"
@@ -39,11 +39,12 @@
 </head>
 
 @if (session('message'))
-{{ sweetAlert(session('message'), 'success') }}
+    {{ sweetAlert(session('message'), 'success') }}
 @endif
 @if (session('error'))
-{{ sweetAlert(session('error'), 'warning') }}
+    {{ sweetAlert(session('error'), 'warning') }}
 @endif
 <div class="loader">
-    <img src="{{ asset('img/svg_animated/loading.svg') }}" alt="loading">
+    <i style="font-size: 50px" class="fas fa-spinner fa-spin"></i>
+    {{-- <img src="{{ asset('img/svg_animated/loading.svg') }}" alt="loading"> --}}
 </div>

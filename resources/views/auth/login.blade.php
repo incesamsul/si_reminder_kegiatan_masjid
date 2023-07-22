@@ -21,7 +21,9 @@
 
 <style>
     body {
-        background: url('img/png/white.png') !important;
+        /* background: url('img/png/white.png') !important; */
+        background-color: #F7F8FF;
+
         background-repeat: no-repeat !important;
         background-size: cover !important;
         background-attachment: fixed !important;
@@ -36,7 +38,8 @@
                     <div
                         class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
-                            <img src="{{ asset('img/png/white.png') }}" width="100">
+                            <h5>MASJID NURUL IMAM</h5>
+                            {{-- <img src="{{ asset('img/png/white.png') }}" width="100"> --}}
                         </div>
 
                         <div class="card card-main">

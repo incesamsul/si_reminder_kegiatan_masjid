@@ -30,7 +30,7 @@
                                     value="{{ $edit ? $edit->tanggal : '' }}">
                             </div>
                             <div class="form-group">
-                                <label for="kas_keluar">Kas masuk</label>
+                                <label for="kas_keluar">Kas keluar</label>
                                 <input type="text" name="kas_keluar" class="form-control"
                                     value="{{ $edit ? $edit->kas_keluar : ' ' }}">
                             </div>
