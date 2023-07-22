@@ -41,7 +41,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // GENERAL CONTROLLER ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:Administrator,user,penilai']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:Administrator,bendahara,masyarakat']], function () {
 
     Route::get('/dashboard', [General::class, 'dashboard']);
     Route::get('/profile', [General::class, 'profile']);
@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 
 
 // ADMIN ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:Administrator']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:Administrator,bendahara,masyarakat']], function () {
     Route::group(['prefix' => 'admin'], function () {
         // GET REQUEST
         Route::get('/pengguna', [Admin::class, 'pengguna']);

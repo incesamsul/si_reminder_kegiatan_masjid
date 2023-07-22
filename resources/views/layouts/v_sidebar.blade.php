@@ -51,8 +51,33 @@
             @endif
 
 
+            @if (auth()->user()->role == 'bendahara')
+                <li class="" id="liKasMasuk"><a class="nav-link" href="{{ URL::to('/admin/kas_masuk') }}"><i
+                            class="far fa-money-bill-alt"></i>
+                        <span>Kas Masuk</span></a></li>
+
+                <li class="" id="liKasKeluar"><a class="nav-link" href="{{ URL::to('/admin/kas_keluar') }}"><i
+                            class="far fa-money-bill-alt"></i>
+                        <span>Kas Keluar</span></a></li>
+
+                <li class="" id="liRekapKas"><a class="nav-link" href="{{ URL::to('/admin/rekap_kas') }}"><i
+                            class="far fa-money-bill-alt"></i>
+                        <span>Rekap Kas</span></a></li>
+            @endif
 
 
+            @if (auth()->user()->role == 'masyarakat')
+                <li class="" id="liKegiatanMasjid"><a class="nav-link"
+                        href="{{ URL::to('/admin/kegiatan_masjid') }}"><i class="far fa-file-alt"></i>
+                        <span>Kegiatan Masjid</span></a></li>
+                <li class="" id="liRekapKas"><a class="nav-link" href="{{ URL::to('/admin/rekap_kas') }}"><i
+                            class="far fa-money-bill-alt"></i>
+                        <span>Rekap Kas</span></a></li>
+
+                <li class="" id="liJadwalCeramah"><a class="nav-link"
+                        href="{{ URL::to('/admin/jadwal_ceramah') }}"><i class="far fa-calendar-alt"></i>
+                        <span>Jadwal Ceramah</span></a></li>
+            @endif
 
 
 

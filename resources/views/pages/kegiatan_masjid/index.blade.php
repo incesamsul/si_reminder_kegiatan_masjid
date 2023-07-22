@@ -10,10 +10,12 @@
                         <div class="table-tools d-flex justify-content-around ">
                             <input type="text" class="form-control card-form-header mr-3" placeholder="Cari Data  ..."
                                 id="cari-data">
-                            <button type="button" class="btn bg-main text-white float-right">
-                                <a href="{{ URL::to('/admin/kegiatan_masjid/create') }}" type="button"
-                                    class="btn bg-main text-white float-right"><i class="fas fa-plus"></i></a>
-                            </button>
+                            @if (auth()->user()->role == 'Administrator' || auth()->user()->role == 'bendahara')
+                                <button type="button" class="btn bg-main text-white float-right">
+                                    <a href="{{ URL::to('/admin/kegiatan_masjid/create') }}" type="button"
+                                        class="btn bg-main text-white float-right"><i class="fas fa-plus"></i></a>
+                                </button>
+                            @endif
                         </div>
                     </div>
                     <div class="card-body p-0">
@@ -23,7 +25,9 @@
                                     <th>#</th>
                                     <td>Tgl kegiatan</td>
                                     <td>Jenis Kegiatan</td>
-                                    <td>Aksi</td>
+                                    @if (auth()->user()->role == 'Administrator' || auth()->user()->role == 'bendahara')
+                                        <td>Aksi</td>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,18 +36,21 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->tgl_kegiatan }}</td>
                                         <td>{{ $row->jenis_kegiatan }}</td>
-                                        <td>
-                                            <a href="{{ URL::to('/admin/kegiatan_masjid/edit/' . $row->id) }}"
-                                                class="btn btn-primary">Edit</a>
-                                            <form action="{{ URL::to('/admin/kegiatan_masjid/delete/' . $row->id) }}"
-                                                method="POST" style="display: inline">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit" onclick="return confirm('Yakin?')"
-                                                    class="ml-2 btn btn-danger">Hapus</button>
-                                            </form>
+                                        @if (auth()->user()->role == 'Administrator' || auth()->user()->role == 'bendahara')
+                                            <td>
 
-                                        </td>
+                                                <a href="{{ URL::to('/admin/kegiatan_masjid/edit/' . $row->id) }}"
+                                                    class="btn btn-primary">Edit</a>
+                                                <form action="{{ URL::to('/admin/kegiatan_masjid/delete/' . $row->id) }}"
+                                                    method="POST" style="display: inline">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit" onclick="return confirm('Yakin?')"
+                                                        class="ml-2 btn btn-danger">Hapus</button>
+                                                </form>
+
+                                            </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>

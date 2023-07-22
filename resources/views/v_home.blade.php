@@ -40,6 +40,17 @@
 
 </head>
 
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .full-height {
+        height: 100vh !important;
+    }
+</style>
+
+
 <body>
 
     <div class="hero_area">
@@ -88,14 +99,14 @@
                             <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                                 <ul class="navbar-nav  ">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Beranda <span
+                                        <a class="nav-link" href="#">Beranda <span
                                                 class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about.html"> Tentang</a>
+                                        <a class="nav-link" href="#tentang"> Tentang</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="treatment.html">Jadwal</a>
+                                        <a class="nav-link" href="#jadwal">Jadwal</a>
                                     </li>
                                 </ul>
                             </div>
@@ -151,7 +162,7 @@
 
     <!-- book section -->
 
-    <section class="book_section layout_padding">
+    <section class="book_section layout_padding " id="jadwal">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -159,7 +170,142 @@
                         <h4>
                             JADWAL <span>CERAMAH</span>
                         </h4>
+                        <table class="table table-striped table-hover table-user table-action-hover" id="table-data">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <td>Tanggal</td>
+                                    <td>nama</td>
+                                    <td>No hp</td>
+                                    <td>tema</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($jadwal_ceramah as $row)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $row->tanggal }}</td>
+                                        <td>{{ $row->nama }}</td>
+                                        <td>{{ $row->no_hp }}</td>
+                                        <td>{{ $row->tema }}</td>
 
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="book_section layout_padding " id="jadwal_kegiatan">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <h4>
+                            JADWAL <span>KEGIATAN</span>
+                        </h4>
+                        <table class="table table-striped table-hover table-user table-action-hover" id="table-data">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <td>Tgl kegiatan</td>
+                                    <td>Jenis Kegiatan</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($kegiatan_masjid as $row)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $row->tgl_kegiatan }}</td>
+                                        <td>{{ $row->jenis_kegiatan }}</td>
+
+
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="book_section layout_padding" id="rekap_kas">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form>
+                        <h4>
+                            REKAP <span>KAS</span>
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+
+                                        <table class="table table-striped table-hover table-user table-action-hover"
+                                            id="table-data">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <td>Tanggal</td>
+                                                    <td>Kas keluar</td>
+                                                    <td>Jenis kas</td>
+                                                    <td>Saldo</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($kas_keluar as $row)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $row->tanggal }}</td>
+                                                        <td>Rp. {{ number_format($row->kas_keluar) }}</td>
+                                                        <td>{{ $row->jenis_kas }}</td>
+                                                        <td>Rp. {{ number_format($row->kas_keluar) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+
+                                        <table class="table table-striped table-hover table-user table-action-hover"
+                                            id="table-data">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <td>Tanggal</td>
+                                                    <td>Kas masuk</td>
+                                                    <td>Jenis kas</td>
+                                                    <td>Saldo</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($kas_masuk as $row)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $row->tanggal }}</td>
+                                                        <td>Rp. {{ number_format($row->kas_masuk) }}</td>
+                                                        <td>{{ $row->jenis_kas }}</td>
+                                                        <td>Rp. {{ number_format($row->kas_masuk) }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -172,7 +318,7 @@
 
 
     <!-- footer section -->
-    <footer class="footer_section">
+    <footer class="footer_section" id="tentang">
         <div class="container">
             <p>
                 &copy; <span id="displayYear"></span> 2023
