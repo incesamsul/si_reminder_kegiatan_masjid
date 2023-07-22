@@ -61,6 +61,7 @@
                                                 $pesan = "Halo $row->nama \n\n";
                                                 $pesan .= 'Ini adalah pengingat untuk ceramah yang akan datang:\n';
                                                 $pesan .= "Tanggal: $row->tanggal  \n";
+                                                $pesan .= "Tema ceramah: $row->tema  \n";
                                                 $pesan .= 'Jangan lupa untuk hadir dan mempersiapkan diri untuk acara ini. Semoga acara ceramah berjalan dengan lancar dan bermanfaat. \n\n';
                                                 $pesan .= 'Terima kasih!';
                                                 ?>
