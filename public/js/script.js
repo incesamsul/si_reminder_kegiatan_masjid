@@ -1,5 +1,5 @@
 // MENGHILANGKAN LOADER KETIKA HALAMAN TELAH TERLOAD
-$(function() {
+$(function () {
     $('.loader').addClass('hidden');
 })
 
@@ -51,9 +51,9 @@ function validateFotoDisplay(name) {
 }
 
 // MEMBUAT INPUT DI SWEETALWERT TYPABLE
-$.fn.modal.Constructor.prototype._enforceFocus = function() {};
+$.fn.modal.Constructor.prototype._enforceFocus = function () { };
 
-$('.collapse-trigger-button').on('click', function(e) {
+$('.collapse-trigger-button').on('click', function (e) {
     if ($('body').hasClass('sidebar-mini')) {
         $('.sidebar-menu li.menu-header').css('display', 'block');
     } else {
@@ -62,14 +62,14 @@ $('.collapse-trigger-button').on('click', function(e) {
 })
 
 // RESET MODAL KETIKA DI TUTUP
-$(".modal").on("hidden.bs.modal", function() {
+$(".modal").on("hidden.bs.modal", function () {
     $("#response-data").html("");
     $('#cari-data').val("");
     $("#response-linked-data").html("");
 
 });
 
-$(document).on('change', '.custom-file-input', function(event) {
+$(document).on('change', '.custom-file-input', function (event) {
     $(this).next('.custom-file-label').html(event.target.files[0].name);
 })
 
@@ -100,9 +100,9 @@ function showLoading(parentEl, width, haveParent) {
     }
 }
 // TABLE ACTION HOVER
-$('.table-action-hover').on('mouseenter', 'tbody tr', function() {
+$('.table-action-hover').on('mouseenter', 'tbody tr', function () {
     $(this).children().last().addClass('show');
-}).on('mouseleave', 'tbody tr', function() {
+}).on('mouseleave', 'tbody tr', function () {
     $(this).children().last().removeClass('show');
 });
 
@@ -124,12 +124,20 @@ $('#table-data-blank').DataTable({
     "bInfo": false,
     "pagination": false,
     "responsive": true
+    , dom: 'Bfrtip',
+    buttons: [
+        'copy', 'excel', 'pdf'
+    ]
 });
 
 let dataTable = $('#table-data').DataTable({
     "lengthChange": false,
-    "responsive": true
+    "responsive": true,
+    dom: 'Bfrtip',
+    buttons: [
+        'copy', 'excel', 'pdf'
+    ]
 });
-$("#searchbox").on("keyup search input paste cut", function() {
+$("#searchbox").on("keyup search input paste cut", function () {
     dataTable.search(this.value).draw();
 });
