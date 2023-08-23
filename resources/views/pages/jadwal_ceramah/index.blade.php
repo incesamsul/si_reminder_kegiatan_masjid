@@ -29,6 +29,7 @@
                                     <td>tema</td>
                                     @if (auth()->user()->role == 'Administrator' || auth()->user()->role == 'bendahara')
                                         <td>Aksi</td>
+                                        <td>Status</td>
                                     @endif
                                 </tr>
                             </thead>
@@ -72,6 +73,14 @@
                                                     Kirim
                                                 </a>
 
+                                            </td>
+                                            <td>
+                                                @if ($row->status == '')
+                                                    <a href="{{ URL::to('admin/jadwal_ceramah/kirim/' . $row->id) }}"
+                                                        class="badge badge-primary">kirim</a>
+                                                @else
+                                                    <a href="#" class="badge badge-success">terkirim</a>
+                                                @endif
                                             </td>
                                         @endif
                                     </tr>

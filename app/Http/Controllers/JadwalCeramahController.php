@@ -56,4 +56,12 @@ class JadwalCeramahController extends Controller
         JadwalCeramah::destroy($id);
         return redirect('/admin/jadwal_ceramah')->with('message', 'kegiatan Berhasil di hapus');
     }
+
+    public function kirim($id)
+    {
+        JadwalCeramah::where('id', $id)->update([
+            'status' => 'terkirim'
+        ]);
+        return redirect('/admin/jadwal_ceramah')->with('message', 'udpated to terkirim');
+    }
 }

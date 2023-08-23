@@ -98,5 +98,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,bendahara,masyara
         Route::post('/jadwal_ceramah', [JadwalCeramahController::class, 'store']);
         Route::put('/jadwal_ceramah', [JadwalCeramahController::class, 'update']);
         Route::delete('/jadwal_ceramah/delete/{id}', [JadwalCeramahController::class, 'delete']);
+        Route::get('/jadwal_ceramah/kirim/{id}', [JadwalCeramahController::class, 'kirim']);
     });
 });

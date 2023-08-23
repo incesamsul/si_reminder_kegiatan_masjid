@@ -19,6 +19,7 @@ class CreateJadwalCeramahsTable extends Migration
             $table->string('nama');
             $table->string('no_hp');
             $table->string('tema');
+            $table->string('status');
             $table->timestamps();
         });
     }
