@@ -90,6 +90,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,bendahara,masyara
         Route::delete('/kas_keluar/delete/{id}', [KasKeluarController::class, 'delete']);
 
         Route::get('/rekap_kas', [RekapKasController::class, 'index']);
+        Route::get('/rekap_kas/cetak', [RekapKasController::class, 'cetak']);
 
 
         Route::get('/jadwal_ceramah', [JadwalCeramahController::class, 'index']);
