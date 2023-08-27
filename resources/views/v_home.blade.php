@@ -125,7 +125,8 @@
         </header>
         <!-- end header section -->
         <!-- slider section -->
-        <section class="slider_section shadow-none">
+        <section class="slider_section shadow-none"
+            style="background: url('img/masjid.jpg'); background-repeat:no-repeat; background-size:cover">
             <div class="container ">
                 <div class="row">
                     <div class="col-md-6">
@@ -141,7 +142,7 @@
                                     Nurul Imam Pangkep
                                 </span>
                             </h1>
-                            <p>
+                            <p style="color:black">
                                 Website Sistem informasi dan reminder pada kegiatan masjid raya nurul imam pangkep
                             </p>
 
@@ -149,7 +150,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="img-box">
-                            <img src="{{ asset('template/mico-html/images/3733.jpg ') }}" alt="">
+                            {{-- <img src="{{ asset('template/mico-html/images/3733.jpg ') }}" alt=""> --}}
                         </div>
                     </div>
                 </div>
