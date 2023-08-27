@@ -35,6 +35,8 @@
                         <div class="table-tools d-flex justify-content-around ">
                             {{-- <input type="text" class="form-control card-form-header mr-3" placeholder="Cari Data  ..."
                                 id="cari-data"> --}}
+                            <a href="{{ URL::to('/admin/rekap_kas/cetak') }}" class="btn bg-main text-white"><i
+                                    class="fas fa-print"></i> Cetak</a>
                         </div>
                     </div>
                     <div class="card-body p-0">
