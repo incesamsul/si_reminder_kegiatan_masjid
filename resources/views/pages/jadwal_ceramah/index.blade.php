@@ -59,7 +59,7 @@
 
                                                 <?php
                                                 
-                                                $pesan = "Halo $row->nama \n\n";
+                                                $pesan = "Assalamu'alaikum $row->nama \n\n";
                                                 $pesan .= 'Ini adalah pengingat untuk ceramah yang akan datang:\n';
                                                 $pesan .= "Tanggal: $row->tanggal  \n";
                                                 $pesan .= "Tema ceramah: $row->tema  \n";
