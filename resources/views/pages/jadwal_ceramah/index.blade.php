@@ -57,12 +57,26 @@
                                                         Hapus</button>
                                                 </form>
 
+
+                                                {{-- format
+                                                Assalamu'alaikum Warahmatullahi Wabarakatuh,pak
+
+                                                Ini adalah pengingat untuk ceramah yang akan datang:Tanggal: 2023-09-25
+                                                Tema ceramah: -
+                                                Waktu : -
+                                                Alamat : -
+                                                Jangan lupa untuk hadir dan mempersiapkan diri untuk acara ini. Semoga acara ceramah berjalan dengan lancar dan bermanfaat. 
+
+                                                Terima kasih! --}}
+
                                                 <?php
                                                 
-                                                $pesan = "Assalamu'alaikum $row->nama \n\n";
-                                                $pesan .= 'Ini adalah pengingat untuk ceramah yang akan datang:\n';
-                                                $pesan .= "Tanggal: $row->tanggal  \n";
-                                                $pesan .= "Tema ceramah: $row->tema  \n";
+                                                $pesan = "Assalamu'alaikum Warahmatullahi Wabarakatuh,pak $row->nama \n\n";
+                                                $pesan .= "Ini adalah pengingat untuk ceramah yang akan datang: \n";
+                                                $pesan .= "Tanggal: $row->tanggal \n";
+                                                $pesan .= "Tema: $row->tema  \n";
+                                                $pesan .= "Waktu: $row->waktu  \n";
+                                                $pesan .= "Alamat: $row->alamat   \n";
                                                 $pesan .= "Jangan lupa untuk hadir dan mempersiapkan diri untuk acara ini. Semoga acara ceramah berjalan dengan lancar dan bermanfaat. \n\n";
                                                 $pesan .= 'Terima kasih!';
                                                 ?>

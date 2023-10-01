@@ -29,7 +29,7 @@
 
         .header {
             color: #000;
-            border-bottom: 4px double #29166F;
+            border-bottom: 4px double #000;
             margin-bottom: 10px;
         }
 
@@ -78,8 +78,8 @@
 
             </div>
             <div class="header-text">
-                <h4>MASJID JAMI NURUL IMAM</h4>
-                <P>KAMPUNG BONTOLALI DESA MANAKKU KECAMATAN LABAKKANG</P>
+                <h3>MASJID JAMI NURUL IMAM</h3>
+                <h3>KAMPUNG BONTOLALI DESA MANAKKU KECAMATAN LABAKKANG</h3>
             </div>
         </div>
         <h4 class="text-center">BUKU KAS UMUM</h4>

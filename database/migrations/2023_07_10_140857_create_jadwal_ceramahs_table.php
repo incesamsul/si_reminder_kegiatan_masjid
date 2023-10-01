@@ -16,6 +16,8 @@ class CreateJadwalCeramahsTable extends Migration
         Schema::create('jadwal_ceramah', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
+            $table->time('waktu');
+            $table->string('alamat');
             $table->string('nama');
             $table->string('no_hp');
             $table->string('tema');

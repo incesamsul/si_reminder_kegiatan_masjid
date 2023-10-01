@@ -30,6 +30,16 @@
                                     value="{{ $edit ? $edit->tanggal : '' }}">
                             </div>
                             <div class="form-group">
+                                <label for="waktu">Waktu</label>
+                                <input type="time" name="waktu" class="form-control"
+                                    value="{{ $edit ? $edit->waktu : '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <input type="text" name="alamat" class="form-control"
+                                    value="{{ $edit ? $edit->alamat : '' }}">
+                            </div>
+                            <div class="form-group">
                                 <label for="nama">nama</label>
                                 <input type="text" name="nama" class="form-control"
                                     value="{{ $edit ? $edit->nama : ' ' }}">

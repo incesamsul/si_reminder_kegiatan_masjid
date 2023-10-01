@@ -30,6 +30,8 @@ class JadwalCeramahController extends Controller
     {
         JadwalCeramah::create([
             'tanggal' => $request->tanggal,
+            'waktu' => $request->waktu,
+            'alamat' => $request->alamat,
             'nama' => $request->nama,
             'no_hp' => $request->no_hp,
             'tema' => $request->tema
@@ -44,6 +46,8 @@ class JadwalCeramahController extends Controller
         ])->first();
         $data->update([
             'tanggal' => $request->tanggal,
+            'waktu' => $request->waktu,
+            'alamat' => $request->alamat,
             'nama' => $request->nama,
             'no_hp' => $request->no_hp,
             'tema' => $request->tema
